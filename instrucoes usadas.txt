@@ -1,0 +1,28 @@
+ADF R1, R2, R3          # Operação inexistente
+ADD R1, R2                # Poucos argumentos
+SUB R4, R9, R2
+MUL R1, R2, R3, R4   # Muitos argumentos
+SUB R32, R1, R2        # Registrador inválido
+BEQ R1, R2, ABC       # Offset inválido (deve ser número)
+LOAD R1, 100(            # Formato de endereço inválido
+UNKN R1, R2, R3        # Instrução completamente desconhecida
+ADD R1, R2, R3
+
+
+ADD R1, R2, R3
+ADD R5, R1, R6
+LOAD R10, 100(R5)
+ADD R8, R9, R10
+
+
+ADD R1, R2, R3
+SUB R2, R4, R5
+SUB R4, R6, R1
+
+
+BEQ R1, R1, 2      # Verdadeiro
+ADD R3, R3, R3   # Deve ser descartado
+MUL R4, R4, R4   # Deve ser descartado
+ADD R8, R5, R5   # Só será executado se BEQ realmente desviar
+ADD R7, R6, R6   # Só será executado se BEQ realmente desviar
+
